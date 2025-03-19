@@ -1,0 +1,63 @@
+        /* Custom Styles */
+        .navbar {
+            background-color: #000; /* Black navbar */
+        }
+        
+        .navbar-brand img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffcc00;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #ffcc00, #ff6600);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .floating-images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .floating-images img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            animation: float 3s infinite alternate;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #000;
+            color: #ffcc00;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .cta:hover {
+            background: #222;
+        }
