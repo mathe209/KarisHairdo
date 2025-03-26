@@ -44,26 +44,42 @@
             .hero {
                 height: 30vh;  /* Reduce height for mobile */
                 background-size: contain;  /* Adjust how the image fits */
-                font-size: 1.5rem;
                 padding: 50px 20px;
             }
+            .hero h1{
+                font-size: clamp(24px, 6vw, 50px)!important;
+                padding-bottom: 1rem;
+                transform: translateY(-50%);
+
+            }
             .hero h3{
-                font-size: medium;
+                font-size: 1.2rem;
+                padding-top: 1rem;
+                top: 40%;
+            }
+        }
+        /* 📌 Special Fix for Landscape Mode */
+        @media (max-width: 1024px) and (max-height: 500px) {
+            .hero h1 {
+                top: 35%; /* Moves text higher */
+                font-size: 5vw; /* Adjusts size dynamically */
+            }
+            .hero h3 {
+                bottom: 20%; /* Moves text lower */
+                font-size: 1rem;
             }
         }
         .hero h1 {
             position: absolute;
             font-size: clamp(40px, 10vw, 100px);  /* Adjust dynamically */
-            margin-bottom: 16px;
             z-index: 2;
             width: 100%;
-            padding: 20px;
+            transform: translateY(-50%); /* Ensures centering */
         }
         .hero h3{
             position:absolute;
             color:rgb(255, 238, 0);
-            bottom: 35%;
-            padding-top: 55px;
+            bottom: 29%;
         }
         .hero::before {
             content: "";
@@ -94,8 +110,8 @@
             100% { transform: translateY(-10px); }
         }*/
         h1{
-            font-family: "Times New Roman", Times, serif;
-            font-size: large;
+            font-family: 'Sofia', cursive;
+            font-size: medium;
             color: #bfc72b;
         }
 
@@ -116,4 +132,7 @@
 
         .cta:hover {
             background: #222;
+        }
+        .moveUp{
+            bottom: 200xp;
         }
