@@ -1,10 +1,12 @@
         /* Custom Styles */
         body{
-            background-color: #222;
+            background-color: #3c402c;
+            color: aliceblue;
         }
         .navbar {
-            background-color: #000; /* Black navbar */
+            background-color: #3c402c; /* Black navbar */
             margin-bottom: 0;
+            height: auto;
         }
         
         .navbar-brand img {
@@ -13,7 +15,7 @@
         }
 
         .navbar-nav .nav-link {
-            color: rgb(18, 16, 16);
+            color:#bfc72b;
         }
 
         .navbar-nav .nav-link:hover {
@@ -57,16 +59,34 @@
                 padding-top: 1rem;
                 top: 40%;
             }
+            section#gallery img{
+                height: 65vh!important;
+            }
         }
         /* 📌 Special Fix for Landscape Mode */
         @media (max-width: 1024px) and (max-height: 500px) {
             .hero h1 {
                 top: 35%; /* Moves text higher */
-                font-size: 5vw; /* Adjusts size dynamically */
+                font-size: 20vw; /* Adjusts size dynamically */
             }
             .hero h3 {
                 bottom: 20%; /* Moves text lower */
                 font-size: 1rem;
+            }
+            .row {
+                display: flex;
+                flex-direction: column; /* Stack items vertically */
+                align-items: center; /* Center content */
+            }
+            
+            .col-md-6 {
+                width: 100%; /* Full width for stacking */
+            }
+        
+            section#gallery, section#priceList {
+                display: block; /* Ensure sections are visible */
+                width: 100%!important;
+                text-align: center; /* Optional: Center text */
             }
         }
         .hero h1 {
@@ -90,6 +110,7 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.6);
         }
+
 
        /* .floating-images {
             display: flex;
@@ -133,6 +154,62 @@
         .cta:hover {
             background: #222;
         }
-        .moveUp{
-            bottom: 200xp;
+        section#gallery img{
+            height: 95vh;
         }
+        section#priceList{
+            justify-content: center;
+            text-align: center;
+            line-height: 2rem;
+            padding-top: 40px;
+            font-size: 1rem;
+            margin-top: 17px;
+        }
+        section#priceList h1{
+            font-size: 3rem;
+            text-decoration: underline;
+            padding-bottom: 10px;
+        }
+        section#priceList h4{
+            font-size: 1.5rem;
+            text-decoration: dashed;
+            padding-bottom: 10px;
+        }
+
+        section#priceList ul li{
+            color: #bfc72b;
+            list-style: none;
+            padding: 13px;
+        }
+        .price{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 100;
+            font-style: italic;
+            font-size: 20px;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+          
+        .animated-bg {
+            background: linear-gradient(-45deg, #000000, #89791c, #5d4a01);
+            background-size: 300% 300%;
+            animation: gradientAnimation 8s ease infinite;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
+            50% { text-shadow: 0 0 10px #FFDD57, 0 0 20px #FFDD57; }
+            100% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
+        }
+          
+        .price-header {
+            color: #FFD700;
+            text-transform: uppercase;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+          
+        
+          
+        
