@@ -1,74 +1,239 @@
+        /* Custom Styles */
         body{
-            background-color: #545146;
+            background-color: #3c402c;
+            color: aliceblue;
         }
-        /* HEADER STYLING */
         .navbar {
-            background: #000;
+            background-color: #3c402c; /* Black navbar */
             margin-bottom: 0;
+            height: auto;
         }
-        h1{
-            font-family: "Times New Roman", Times, serif;
-            font-size: large;
+        
+        .navbar-brand img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .navbar-nav .nav-link {
+            color:#bfc72b;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffcc00;
+        }
+        
+        .hero {
+            background-image: url("images/mix222.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            background-color: #000;
+            text-align: center;
+            padding: 100px 20px;
+            /*background: linear-gradient(135deg, #ffcc00, #ff6600);*/
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+            flex-direction: column;
+            align-items: center;  /* Centers content horizontally */
+            justify-content: center;  
+            margin-top: 35px;
+        }
+        /*for mobile phones, reduce the scale of the picture*/
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;  /* Reduce height for mobile */
+                background-size: cover;  /* Adjust how the image fits */
+                padding: 50px 20px;
+                background-image: url("images/pic2.jpg");
+            }
+            .hero h1{
+                font-size: clamp(40px, 8vw, 70px)!important;
+                padding-bottom: 1rem;
+                transform: translateY(-50%);
+                top: 22%;
+
+            }
+            .hero h3{
+                font-size: 1.2rem;
+                padding-top: 1rem;
+                top: 70%;
+            }
+            div#galleryCarousel{
+                height: 100vh;
+                padding:10px ;
+            }
+            .card img{
+                height: 70vh;
+            }
+            .grid-gallery { display: none; } /* Hide grid on mobile */
+
+        }
+        @media (min-width: 769px) {
+            .carousel-gallery { display: none; } /* Hide carousel on larger screens */
+          }
+        /* 📌 Special Fix for Landscape Mode */
+        @media (max-width: 1024px) and (max-height: 500px) {
+            .hero h1 {
+                top: 35%; /* Moves text higher */
+                font-size: 20vw; /* Adjusts size dynamically */
+            }
+            .hero h3 {
+                bottom: 20%; /* Moves text lower */
+                font-size: 1rem;
+            }
+            .row {
+                display: flex;
+                flex-direction: column; /* Stack items vertically */
+                align-items: center; /* Center content */
+            }
+            
+            .col-md-6 {
+                width: 100%; /* Full width for stacking */
+            }
+        
+            section#gallery, section#priceList {
+                display: block; /* Ensure sections are visible */
+                width: 100%!important;
+                text-align: center; /* Optional: Center text */
+            }
+        }
+        .hero h1 {
+            position: absolute;
+            font-size: clamp(40px, 10vw, 100px);  /* Adjust dynamically */
+            z-index: 2;
+            width: 100%;
+            transform: translateY(-50%); /* Ensures centering */
+        }
+        .hero h3{
+            position:absolute;
+            color:rgb(255, 238, 0);
+            bottom: 29%;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+
+       /* .floating-images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }*/
+
+        /*.floating-images img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            animation: float 3s infinite alternate;
+        }*/
+
+        /*@keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }*/
+        .styledh1{
+            font-family: 'Sofia', cursive;
+            font-size: medium;
             color: #bfc72b;
         }
 
-        .navbar-brand, .nav-link {
-            color: black !important;
-            font-weight: bold;
-        }
-        .navbar-toggler {
-            border: none;
-        }
-        a:hover{
-            background-color: #d9df6f;
-
-        }
-        /* HERO SECTION */
-        .hero {
-            background: linear-gradient(135deg, #545146, #86954a);
-            color: white;
-            text-align: center;
-            padding: 5vh 5%;
-        }
-
-        /* FLOATING IMAGES */
-        .floating-images img {
-            /*width: 100px;*/
-            /*height: 100px;*/
-            margin-top: 15px;
-            border-radius: 50%;
-            animation: float 3s infinite alternate;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-10px); }
-        }
-
-        /* CTA BUTTON */
         .cta {
+            position: absolute;
             display: inline-block;
-            padding: 14px 28px;
-            font-size: 20px;
+            padding: 14px 24px;
             background: #000;
             color: #ffcc00;
+            font-size: 18px;
             text-decoration: none;
             border-radius: 5px;
             transition: background 0.3s;
+            bottom: 20px;
+            justify-content: center;
+            margin-bottom: 15px;
         }
 
         .cta:hover {
             background: #222;
         }
-
-        /* DESKTOP STYLING */
-        @media (min-width: 992px) {
-            .hero h1 {
-                font-size: 70px;
-            }
-
-           /* .floating-images img {*/
-                /*width: 180px;*/
-                /*height: 180px;*/
-            /*}*/
+        section#gallery img{
+            height: 95vh;
         }
+        section#priceList{
+            justify-content: center;
+            text-align: center;
+            line-height: 2rem;
+            padding-top: 40px;
+            font-size: 1rem;
+            margin-top: 17px;
+        }
+        section#priceList h1{
+            font-size: 3rem;
+            text-decoration: underline;
+            padding-bottom: 10px;
+        }
+        section#priceList h4{
+            font-size: 1.5rem;
+            text-decoration: dashed;
+            padding-bottom: 10px;
+        }
+
+        section#priceList ul li{
+            color: #bfc72be9;
+            list-style: none;
+            padding: 13px;
+            border: #81eb009f 1px solid;
+            border-radius: 89%;
+            border-bottom: 1px;
+            box-shadow: 1px 2px 2px;
+        }
+        .price{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 100;
+            font-style: italic;
+            font-size: 20px;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+          
+        .animated-bg {
+            background: linear-gradient(-45deg, #000000, #89791c, #5d4a01);
+            background-size: 300% 300%;
+            animation: gradientAnimation 8s ease infinite;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
+            50% { text-shadow: 0 0 10px #FFDD57, 0 0 20px #FFDD57; }
+            100% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
+        }
+          
+        .price-header {
+            color: #494113a9;
+            text-transform: uppercase;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        .card{
+            background-color: #3c402c;
+            color: #e2f019;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+        }
+        .card img{
+            width: 100%;
+            padding: 0;
+        }
+          
+        
+          
+        
