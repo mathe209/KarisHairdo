@@ -134,26 +134,6 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.6);
         }
-
-
-       /* .floating-images {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 16px;
-        }*/
-
-        /*.floating-images img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            animation: float 3s infinite alternate;
-        }*/
-
-        /*@keyframes float {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-10px); }
-        }*/
         .styledh1{
             font-family: 'Sofia', cursive;
             font-size: 20px;
