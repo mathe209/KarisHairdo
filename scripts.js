@@ -41,25 +41,48 @@ document.getElementById("bookingForm").addEventListener("submit", async (e) => {
   }
 });
 
-//make the list dissapear based on the radio buttons
-document.getElementById('jumbo').addEventListener("change", () => {
-  const jumboList = document.getElementById("jumboList");
-  const knotlessList = document.getElementById("knotlessList");
-    
-  jumboList.hidden = false;
-  jumboList.disabled = false;
-    
-  knotlessList.hidden = true;
-  knotlessList.disabled = true;
-});
-    
-document.getElementById('knotless').addEventListener("change", () => {
-  const jumboList = document.getElementById("jumboList");
-  const knotlessList = document.getElementById("knotlessList");
-    
-  knotlessList.hidden = false;
-  knotlessList.disabled = false;
-    
-  jumboList.hidden = true;
-  jumboList.disabled = true;
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const radios = {
+    "jumbo": "jumboList",
+    "knotless": "knotlessList",
+    "criss-cross-marley-twist": "criss-cross-list",
+    "butterfly-locs": "butterfly-list",
+    "french-curls": "french-curls-list",
+    "invisible-locs": "invisible-locs-list",
+    "mermaid-braids": "mermaids-list",
+    "goddess-twists": "goddess-twist-list",
+    "soft-locs-curls": "soft-locs-list",
+    "goddess-knotless": "goddess-knotless-list",
+    "small-curly-pops": "small-curly-pops-list",
+    "river-locs": "river-locs-list"
+  };
+
+  Object.keys(radios).forEach((radioId) => {
+    const radioButton = document.getElementById(radioId);
+    if (!radioButton) {
+      console.warn(`Radio button with ID '${radioId}' not found.`);
+      return;
+    }
+
+    radioButton.addEventListener("change", () => {
+      // Hide all other select lists
+      Object.values(radios).forEach((listId) => {
+        const list = document.getElementById(listId);
+        if (list) {
+          list.hidden = true;
+          list.disabled = true;
+        }
+      });
+
+      // Show the selected one
+      const listId = radios[radioId];
+      const selectedList = document.getElementById(listId);
+      if (selectedList) {
+        selectedList.hidden = false;
+        selectedList.disabled = false;
+      }
+    });
+  });
 });
