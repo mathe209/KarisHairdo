@@ -45,7 +45,6 @@ document.getElementById("bookingForm").addEventListener("submit", async (e) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const radios = {
-    "jumbo": "jumboList",
     "knotless": "knotlessList",
     "criss-cross-marley-twist": "criss-cross-list",
     "butterfly-locs": "butterfly-list",
