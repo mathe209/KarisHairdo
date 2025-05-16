@@ -29,6 +29,11 @@ def get_db():
     finally:
         db.close()
 
+@app.get("/")
+def read_root():
+    return {"message": "Backend is running"}
+
+
 @app.get("/booked-dates",  response_model=List[Schemas.ResponseModel])
 def get_dates(db:Session=Depends(get_db)):
     dates = db.execute(select(models.Booking.bookingDate)).scalars().all()

@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from datetime import datetime, date
 
 class ResponseModel(BaseModel):
@@ -7,6 +7,9 @@ class ResponseModel(BaseModel):
 class Booking(BaseModel):
     name: str
     contact: str
-    braidStyle: str
-    braidLength: str
-    bookingDate: date
+    braid_style: str = Field(alias="braidStyle")
+    braid_length: str = Field(alias="braidLength")
+    booking_date: date = Field(alias="bookingDate")
+
+    class Config:
+        allow_population_by_field_name = True

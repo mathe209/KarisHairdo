@@ -10,7 +10,7 @@ class Booking(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(nullable=False)
     contact: Mapped[str] = mapped_column(nullable=False)
-    braidStyle: Mapped[str] = mapped_column("bradistyle",nullable=False)
+    braidStyle: Mapped[str] = mapped_column("braidstyle",nullable=False)
     braidLength: Mapped[str] = mapped_column("braidlength", nullable=False)
     bookingDate: Mapped[date] = mapped_column("bookingdate",nullable=False)
     created_at: Mapped[datetime] = mapped_column(nullable=False,default=datetime.utcnow) 
