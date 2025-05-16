@@ -3,7 +3,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from . import models, Schemas
-import database
+from . import database
 from database import SessionLocal, engine
 from typing import Optional, List
 import psycopg2
