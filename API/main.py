@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 
 from . import models, Schemas
 from . import database
-from database import SessionLocal, engine
+from API.database import SessionLocal, engine
 from typing import Optional, List
 import psycopg2
 from psycopg2.extras import RealDictCursor
