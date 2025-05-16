@@ -2,9 +2,9 @@ from fastapi import Depends, FastAPI, HTTPException, Response
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-import models as models, Schemas as Schemas
-import database
-from database import SessionLocal, engine
+from . import models, Schemas
+from . import database
+from API.database import SessionLocal, engine
 from typing import Optional, List
 import psycopg2
 from psycopg2.extras import RealDictCursor
@@ -16,7 +16,8 @@ app = FastAPI()
 # Allow requests from your frontend (localhost:5500)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5500"],
+    allow_origins=["http://127.0.0.1:5500", "https://mathe209.github.io/KarisHairdo/"
+],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -28,6 +29,11 @@ def get_db():
         yield db
     finally:
         db.close()
+
+@app.get("/")
+def read_root():
+    return {"message": "Backend is running"}
+
 
 @app.get("/booked-dates",  response_model=List[Schemas.ResponseModel])
 def get_dates(db:Session=Depends(get_db)):

@@ -1,7 +1,7 @@
 const bookedDates = [];
 
 async function fetchBookedDates() {
-  const res = await fetch("http://127.0.0.1:8000/booked-dates");
+  const res = await fetch("https://karishairdo-1.onrender.com/booked-dates");
   const dates = await res.json();
     bookedDates.push(...dates.map(d => d.date.split("T")[0]));
 }
@@ -24,7 +24,7 @@ document.getElementById("bookingForm").addEventListener("submit", async (e) => {
   const formData = new FormData(form); //turn that form into a key-value pair, like a dictionary
   const data = Object.fromEntries(formData); //turns the key value-pair into a js object
   console.log(data)
-  const res = await fetch("http://127.0.0.1:8000/book", {
+  const res = await fetch("https://karishairdo-1.onrender.com/book", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)
