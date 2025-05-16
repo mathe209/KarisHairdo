@@ -7,9 +7,9 @@ class ResponseModel(BaseModel):
 class Booking(BaseModel):
     name: str
     contact: str
-    braid_style: str = Field(alias="braidStyle")
-    braid_length: str = Field(alias="braidLength")
-    booking_date: date = Field(alias="bookingDate")
+    braidstyle: str = Field(alias="braidStyle")
+    braidlength: str = Field(alias="braidLength")
+    bookingdate: date = Field(alias="bookingDate")
 
     class Config:
         allow_population_by_field_name = True
