@@ -24,7 +24,7 @@ document.getElementById("bookingForm").addEventListener("submit", async (e) => {
   const formData = new FormData(form); //turn that form into a key-value pair, like a dictionary
   const data = Object.fromEntries(formData); //turns the key value-pair into a js object
   console.log(data)
-  const res = await fetch("https://karishairdo-1.onrender.com/booke", {
+  const res = await fetch("https://karishairdo-1.onrender.com/book", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)
